@@ -5,14 +5,23 @@
 		"description": "This extension saves information about what Google Music is currently playing to a file, which then can be checked by scripts, etc.",
 		"version": "0.1",
 
-		"browser_action": {
-				"default_icon": "icon.png",
-				"default_popup": "popup.html",
-				"default_title": "Click here!"
+		"background": {
+				"scripts": ["background.js"],
+				"persistent": false
 		},
+
+		"content_scripts": [
+				{
+						"matches": ["*://play.google.com/music/*"],
+						"js": ["injected.js"],
+						"run_at": "document_idle"
+				}
+		],
+
 		"permissions": [
-				"tabs",
-				"https://ajax.googleapis.com/"
-		]
+				"*://play.google.com/music/*"
+		],
+
+		"incognito": "not_allowed"
 
 }
