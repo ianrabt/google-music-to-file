@@ -1,0 +1,9 @@
+{
+		"name": "net.ianrabt.google_music_to_file",
+		"description": "Save Google Play Music information to a temporary file",
+		"path": "/home/ianrtaylor/Development/Chrome Extensions/google-music-to-file/native-client/write-file",
+		"type": "sdio",
+		"allowed_origins": [
+				"chrome-extension://hceegipljnloidocbhcenlcicmgnbhnp/"
+		]
+}

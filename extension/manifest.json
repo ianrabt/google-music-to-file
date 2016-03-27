@@ -1,0 +1,28 @@
+{
+		"manifest_version": 2,
+
+		"name": "Google Music to File",
+		"description": "This extension saves information about what Google Music is currently playing to a file, which then can be checked by scripts, etc.",
+		"version": "0.1",
+
+		"background": {
+				"scripts": ["background.js"],
+				"persistent": false
+		},
+
+		"content_scripts": [
+				{
+						"matches": ["*://play.google.com/music/*"],
+						"js": ["injected.js"],
+						"run_at": "document_idle"
+				}
+		],
+
+		"permissions": [
+				"*://play.google.com/music/*",
+				"nativeMessaging"
+		],
+
+		"incognito": "not_allowed"
+
+}
