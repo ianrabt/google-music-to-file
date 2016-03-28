@@ -9,8 +9,8 @@ if len(sys.argv) > 1:
 		if sys.argv[1] == "--version":
 			print(VERSION)
 			sys.exit(0)
-		else:
-			sys.exit(1)
+#		else:
+#			sys.exit(1)
 
 text_length_bytes = sys.stdin.read(4).encode('utf-8')
 
