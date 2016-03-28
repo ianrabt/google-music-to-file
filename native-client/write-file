@@ -10,9 +10,10 @@ if len(text_length_bytes) == 0:
 		sys.exit(1)
 
 text_length = struct.unpack('i', text_length_bytes)[0]
-print(text_length)
 
-rawJSON = sys.stdin.read(text_length);
-text = json.loads(rawJSON)['text']
-tempFile = open('/home/ianrtaylor/test', 'w')
+JSON = json.loads(sys.stdin.read(text_length))
+text = JSON['text']
+path = JSON['path']
+
+tempFile = open(path, 'w')
 tempFile.write(text)

@@ -5,7 +5,11 @@ chrome.runtime.onMessage.addListener(
 
 			chrome.runtime.sendNativeMessage(
 				'net.ianrabt.google_music_to_file',
-				{ text: request.currentTitle + " - " + request.currentArtist},
+				{
+						text: request.currentTitle + " - " + request.currentArtist,
+						path: "/home/ianrtaylor/test"
+				},
+
 				function(response) {
 						console.log("received " + response);
 				}
