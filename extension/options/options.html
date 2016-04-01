@@ -6,30 +6,55 @@
 		body: { padding: 10px; }
 
 		input[type="text"] {
+			width: 100%;
+		}
+
+		h1 {
+			font-weight: bold;
+		}
+
+		input.code-input {
 			font-family: monospace;
 			font-size: .9rem;
-			width: 100%;
 			margin-bottom: 10px;
 		}
 	</style>
 </head>
 
 <body>
-	<h1>Formatting Options</h1>
+	<h1>Output Format</h1>
 	<h2>Playing</h2>
 	<p><i>Google Music is open in a tab and currently playing music</i></p>
-	<input type="text" id="playing">
+	<input type="text" id="playing" class="code-input">
 
 	<h2>Paused</h2>
 	<p><i>Google Music is open in a tab and paused</i></p>
-	<input type="text" id="paused">
+	<input type="text" id="paused" class="code-input">
 
 	<h2>Stopped</h2>
 	<p><i>Google Music is either not open or has nothing in the queue</i></p>
-	<input type="text" id="stopped">
-
+	<input type="text" id="stopped" class="code-input">
 	<br>
+
+	<h1>Temporary File</h1>
+	<label><input type="checkbox" id="use-default"> Use default value of <span id="default-temp-location"></span></label>
+	<br>
+
+	<div style="margin: 10px 15px 25px 25px;">
+		<label>Temporary File Location (absolute path)</label>
+		<br>
+		<input type="text" id="custom-temp-location">
+	</div>
+
 	<h1>Syntax Help</h1>
+	<p><i>Google Music to File</i> offers a very simple way to format the text output in its temporary file.</p>
+	<ul>
+		<li><code>$artist</code> &mdash; displays the currently playing artist</li>
+		<li><code>$title</code> &mdash; displays the currently playing album</li>
+		<li><code>$title</code> &mdash; displays the currently playing song title</li>
+		<li><code>\$</code> &mdash; escapes the "$" character</li>
+		<li><code>\\</code> &mdash; escapes the "\" character</li>
+	</ul>
 
 	<br>
 	<button id="save">Save</button>
