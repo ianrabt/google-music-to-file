@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Google Music to File Options</title>
+	<style>
+		body: { padding: 10px; }
+
+		input[type="text"] {
+			font-family: monospace;
+			font-size: .9rem;
+			width: 100%;
+			margin-bottom: 10px;
+		}
+	</style>
+</head>
+
+<body>
+	<h1>Formatting Options</h1>
+	<h2>Playing</h2>
+	<p><i>Google Music is open in a tab and currently playing music</i></p>
+	<input type="text" id="playing">
+
+	<h2>Paused</h2>
+	<p><i>Google Music is open in a tab and paused</i></p>
+	<input type="text" id="paused">
+
+	<h2>Stopped</h2>
+	<p><i>Google Music is either not open or has nothing in the queue</i></p>
+	<input type="text" id="stopped">
+
+	<br>
+	<h1>Syntax Help</h1>
+
+	<br>
+	<button id="save">Save</button>
+	<button id="cancel">Cancel</button>
+
+	<script src="options.js"></script>
+</body>

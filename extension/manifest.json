@@ -6,23 +6,27 @@
 		"version": "0.1",
 
 		"background": {
-				"scripts": ["background.js"],
-				"persistent": false
+			"scripts": ["background.js"],
+			"persistent": false
+		},
+
+		"options_ui": {
+			"page": "options/options.html",
+			"chrome_style": true
 		},
 
 		"content_scripts": [
-				{
-						"matches": ["*://play.google.com/music/*"],
-						"js": ["injected.js"],
-						"run_at": "document_idle"
-				}
+			{
+				"matches": ["*://play.google.com/music/*"],
+				"js": ["injected.js"],
+				"run_at": "document_idle"
+			}
 		],
 
 		"permissions": [
-				"*://play.google.com/music/*",
-				"nativeMessaging"
+			"*://play.google.com/music/*",
+			"nativeMessaging"
 		],
 
 		"incognito": "not_allowed"
-
 }
