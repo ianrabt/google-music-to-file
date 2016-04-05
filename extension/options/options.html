@@ -9,6 +9,11 @@
 			width: 100%;
 		}
 
+		input[type="number"] {
+			margin-top: 10px;
+			width: 20%;
+		}
+
 		h1 {
 			font-weight: bold;
 		}
@@ -17,6 +22,10 @@
 			font-family: monospace;
 			font-size: .9rem;
 			margin-bottom: 10px;
+		}
+
+		div.sub-category {
+			margin: 10px 15px 25px 25px;
 		}
 	</style>
 </head>
@@ -37,13 +46,32 @@
 	<br>
 
 	<h1>Temporary File</h1>
-	<label><input type="checkbox" id="use-default"> Use default value of <span id="default-temp-location"></span></label>
+	<label><input type="checkbox" id="use-default-temp"> Use default value of <span id="default-temp-location"></span></label>
 	<br>
 
-	<div style="margin: 10px 15px 25px 25px;">
+	<div class="sub-category">
 		<label>Temporary File Location (absolute path)</label>
 		<br>
 		<input type="text" id="custom-temp-location">
+	</div>
+
+	<h1>Variable Truncation</h1>
+	<p><i>Truncate variables that are over a certain length.</i></p>
+	<label><input type="checkbox" id="truncate-variables"> Truncate variables</label>
+	<div class="sub-category">
+		<label>Truncation string (e.g. "<code>...</code>" or leave blank to append nothing to truncated strings)</label>
+		<br>
+		<input type="text" id="truncate-append-string" class="code-input">
+		<br>
+
+		<div style="margin-left: 15px;">
+			<label><input type="number" min="0" max="100" id="artist-max-length"> <code>$artist</code> maximum length</label>
+			<br>
+			<label><input type="number" min="0" max="100" id="album-max-length"> <code>$album</code> maximum length</label>
+			<br>
+			<label><input type="number" min="0" max="100" id="title-max-length"> <code>$title</code> maximum length</label>
+			<br>
+		</div>
 	</div>
 
 	<h1>Syntax Help</h1>
