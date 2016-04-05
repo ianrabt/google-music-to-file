@@ -5,6 +5,14 @@
 		"description": "This extension saves information about what Google Music is currently playing to a file, which then can be checked by scripts, etc.",
 		"version": "0.1",
 
+		"icons": { "128": "icon128.png" },
+		
+		"browser_action": {
+			"default_icon": {
+				"128": "icon128.png"
+			}
+		},
+
 		"background": {
 			"scripts": ["background.js"],
 			"persistent": false
